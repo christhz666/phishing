@@ -19,27 +19,52 @@ target/
 *.a
 *.obj
 *.out
+*.swp
+*.swo
 
-# Build artifacts
-dist/
-build/
-coverage/
-htmlcov/
-*.log
+# Editor/IDE files
+.vscode/
+.idea/
 *.tmp
 
-# Environment
+# System/Environment files
+.DS_Store
+Thumbs.db
 .env
 .env.local
 *.env.*
 
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
+# Logs and coverage
+*.log
+coverage/
+htmlcov/
+.coverage
 
-# System
-.DS_Store
-Thumbs.db
+# Build/dist directories
+dist/
+build/
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 ```
