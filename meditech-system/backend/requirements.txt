@@ -1,24 +1,47 @@
-FastAPI==0.109.0
+# MediTech System - Backend Requirements
+# Python 3.10+
+
+# FastAPI y servidor
+fastapi==0.109.0
 uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+
+# Base de datos
 sqlalchemy==2.0.25
-alembic==1.13.1
 psycopg2-binary==2.9.9
-pydantic==2.5.3
-pydantic-settings==2.1.0
+alembic==1.13.1
+
+# Redis y cache
+redis==5.0.1
+
+# Autenticación y seguridad
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
-python-multipart==0.0.6
-redis==5.0.1
-celery==5.3.6
-flower==2.0.1
+bcrypt==4.1.2
+
+# Validación de datos
+pydantic==2.5.3
+pydantic-settings==2.1.0
+email-validator==2.1.0
+
+# Códigos QR y Barras
 qrcode[pil]==7.4.2
 python-barcode==0.15.1
-pillow==10.2.0
-reportlab==4.0.8
+
+# HTTP Client para integraciones
 httpx==0.26.0
-aiofiles==23.2.1
-fastapi-cors==0.0.6
-slowapi==0.1.8
+requests==2.31.0
+
+# Logging estructurado
 structlog==24.1.0
-pydicom==2.4.4
-hl7==0.4.2
+
+# Rate limiting
+slowapi==0.1.9
+
+# Utilidades
+python-dateutil==2.8.2
+
+# Testing (opcional)
+pytest==7.4.4
+pytest-asyncio==0.23.3
+httpx==0.26.0

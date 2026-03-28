@@ -4,20 +4,20 @@ from typing import Optional
 
 
 class Settings(BaseSettings):
-    """Configuración centralizada de la aplicación"""
+    """Configuración centralizada de la aplicación MediTech System 3.0"""
     
     # Aplicación
     APP_NAME: str = "MediTech System"
-    APP_VERSION: str = "1.0.0"
-    DEBUG: bool = False
-    ENVIRONMENT: str = "production"  # development, staging, production
+    APP_VERSION: str = "3.0.0"
+    DEBUG: bool = True
+    ENVIRONMENT: str = "development"  # development, staging, production
     
     # Base de datos
     DB_HOST: str = "localhost"
     DB_PORT: int = 5432
     DB_NAME: str = "meditech_db"
     DB_USER: str = "meditech_user"
-    DB_PASSWORD: str = "change_me_in_production"
+    DB_PASSWORD: str = "meditech_secure_2024"
     DB_POOL_SIZE: int = 10
     DB_MAX_OVERFLOW: int = 20
     
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     # Seguridad JWT
     SECRET_KEY: str = "your-secret-key-change-in-production-min-32-chars"
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # Redis
@@ -57,9 +57,13 @@ class Settings(BaseSettings):
     OPENELIS_USERNAME: str = "admin"
     OPENELIS_PASSWORD: str = "admin!@#"
     
+    # HL7 MLLP Server
+    HL7_HOST: str = "0.0.0.0"
+    HL7_PORT: int = 2575
+    
     # Archivos
-    UPLOAD_DIR: str = "/var/meditech/uploads"
-    RESULTS_DIR: str = "/var/meditech/results"
+    UPLOAD_DIR: str = "/opt/meditech/uploads"
+    RESULTS_DIR: str = "/opt/meditech/results"
     MAX_UPLOAD_SIZE: int = 52428800  # 50MB
     
     # CORS
@@ -83,6 +87,9 @@ class Settings(BaseSettings):
     SMTP_USER: Optional[str] = None
     SMTP_PASSWORD: Optional[str] = None
     EMAIL_FROM: str = "noreply@meditech.com"
+    
+    # Multi-sucursal
+    DEFAULT_BRANCH_ID_PREFIX: str = "001"
     
     class Config:
         env_file = ".env"
